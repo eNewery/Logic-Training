@@ -28,7 +28,7 @@ const handleChange = (event) => {
         <option value={3}>1</option>
       </select>
     </div>
-<ToDoButton toDos={toDos} setToDos={setToDos} inputText={input}/>
+<ToDoButton toDos={toDos} setToDos={setToDos} inputText={input} selectedNumber={selectedNumber}/>
 
         </div>
     )
