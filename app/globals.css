@@ -1,0 +1,301 @@
+/* Keyframes */
+
+@keyframes pri1 {
+  0%{background-color: #423a6f; color:white}
+  50%{background-color: green; color:white}
+  100%{background-color: #423a6f; color:white}
+}
+
+@keyframes pri2 {
+  0%{background-color: #423a6f; color: white;}
+  50%{background-color: yellow; color:black;}
+  100%{background-color: #423a6f; color: white;}
+}
+
+@keyframes pri3 {
+  0%{background-color: #423a6f; color:white;}
+  50%{background-color: red; color:white;}
+  100%{background-color: #423a6f; color:white;}
+}
+
+@keyframes toDoButtonAc {
+  0%{  box-shadow: inset 0 -50px 0 0 #423a6f}
+  50%{box-shadow: inset 0 -50px 0 0 #2a2649; color: white;}
+  90%{box-shadow: inset 0 -50px 0 0 #423a6f; color: white;}
+  100%{box-shadow: inset 0 -3px 0 0 #423a6f; color: white;}
+}
+@keyframes cardApp {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+
+}
+@keyframes cardDiss {
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
+@keyframes modalApp {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes trashDelete {
+  0%{background-color: #2a2649;}
+  50%{background-color: #580000;}
+  100%{background-color: #2a2649;}
+}
+/* Keyframes */
+
+*{
+font-family: "Josefin Sans", sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+  background-color: #352f5b;
+}
+.container{
+  display: flex;
+ flex-direction: column; 
+ position: relative;
+}
+.searchContainer{
+  width: 100%;
+  height: 80px;
+  background-color: #2a2649;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 0px 28px 2px #2a2649;
+  align-items: center;
+}
+.toDoContainer{
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+
+.toDoInputsContainer{
+  background: #2a2649;
+  position: fixed;
+bottom: 0;
+  width: 100%;
+  padding: 1em;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 0.5em;
+box-shadow: 0px 0px 28px 2px #2a2649;
+
+}
+/* Contenedor principal */
+.select-container {
+  text-align: center;
+}
+
+/* Estilo del select */
+.styled-select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: #423a6f;
+height: 50px;
+  color: white;
+  appearance: none; /* Elimina el estilo predeterminado */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estilo para el select cuando está enfocado */
+
+
+/* Estilo de la opción del select */
+.styled-select option {
+  font-size: 16px;
+  background-color: white;
+  color: #333;
+}
+
+/* Estilo para mostrar el número seleccionado debajo del select */
+.selected-number {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.toDoInput{
+  outline: none;
+width: 50%;
+height: 50px;
+
+background-color: #423a6f;
+color: white;
+border: none;
+border-radius: 0.2em;
+font-size: 24px;
+padding: 1em;
+margin-left: 0.3em;
+}
+.ToDoButtonContainer{
+  height: 50px;
+  width: 200px;
+}
+.ToDoButton{
+  border-radius: 0.2em;
+  border-bottom-right-radius: 1em;
+  height: 50px;
+  width: 200px;
+  background:#423a6f;
+  border: none;
+  cursor: pointer;
+  transition:0.2s;
+  outline: none;
+  font-size: 24px;
+  color: white;
+}
+.ToDoButton:hover{
+  box-shadow: inset 0 -50px 0 0 #423a6f;
+  transition:0.2s;
+  color: white;
+}
+.ToDoButton:active{
+  animation: toDoButtonAc 1s both;
+}
+
+.toDoCardsContainer{
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 30%;
+  margin-bottom: 6em;
+}
+.toDoCardContainer{
+  margin: 1em;
+  padding: 1em;
+  min-height:50px;
+  background: #423a6f;
+  color: white;
+  border-radius:0.2em;
+  position: relative;
+  animation: cardApp 0.5s both;
+  font-size: 23px;
+}
+.cardBtnContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  position: absolute;
+  right: 0.3em;
+  bottom: 0.6em;
+}
+.cardBtnContainer img{
+  cursor: pointer;
+  background-color:#2a2649 ;
+  padding: 0.3em;
+  border-radius: 1em;
+}
+
+.trashIcon{
+
+}
+
+/* Modal */
+
+.modalContainer{
+height: 100vh;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+position: absolute;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+animation: modalApp 0.5s both;
+}
+.modalContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.modalCloseBtn{
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+}
+/* Modal */
+
+/* Modal Edit */
+
+.editContainer{
+width: 80%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.editInput{
+width: 100%;
+min-height: 60px;
+background: rgb(255, 237, 255);
+border: none;
+outline: none;
+font-size: 24px;
+padding: 1em;
+box-shadow: 0 5px 0 0 #2a2649;
+position: relative;
+border-top: 5px solid #2a2649;
+border-bottom-left-radius:2em;
+border-top-left-radius: 2em;
+}
+
+.editBtn{
+  background-color:#2a2649;
+  color: white;
+  align-self: flex-end;
+  width: 150px;
+  height: 70px;
+  font-size: 24px;
+  border-bottom-right-radius: 1em;
+  border: none;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+transition:0.3s;
+}
+.editBtn:hover{
+background-color: #10440c;
+transition:0.3s;
+}
+
+.closeEditBtn{
+  background-color: #2a2649;
+  color: white;
+  align-self: flex-end;
+  width: 150px;
+  height: 50px;
+  font-size: 24px;
+  border-top-right-radius: 1em;
+  border: none;
+cursor: pointer;
+transition:0.3s
+}
+.closeEditBtn:hover{
+  background-color: #580000;
+  transition:0.3s
+}
+/* Modal Edit */
+
