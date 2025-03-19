@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react';
 import MiContexto from './context';
 
-export default function ToDoCard({input, setInput, deleteToDo, cardText, cardKey }) {
+export default function ToDoCard({input, setInput, deleteToDo, cardText, cardKey, cardPriority }) {
     const cardRef = useRef(null);  
     const trashRef = useRef(null);  
     // Crear la referencia para este card específico
@@ -19,15 +19,15 @@ context.setModal(!context.modal)
             // Después de la animación, eliminar el ToDo
             setTimeout(() => {
                 deleteToDo(cardKey);
-            }, 500); // Sincronizado con la duración de la animación
+            }, 2000); // Sincronizado con la duración de la animación
         }
     };
 
     return (
-        <div className="toDoCardContainer" ref={cardRef}>
+        <div className={`toDoCardContainer ${cardPriority === "1" ? "priority1Card" : cardPriority === "2" ? "priority2Card" : cardPriority === "3" ? "priority3Card" : ""}`} ref={cardRef}>
             {cardText}
             <div className="cardBtnContainer">
-                <img onClick={handleEdit} src="./edit.png" alt="Edit" />
+                <img src="./completed.png" alt="Edit" />
                 <img ref={trashRef} className='trashIcon' onClick={handleDelete} src="./remove.png" alt="Remove" />
             </div>
         </div>
