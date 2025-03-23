@@ -60,6 +60,55 @@ body{
  flex-direction: column; 
  position: relative;
 }
+
+/* Loading */
+
+.loadingContainer{
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.800);
+z-index: 100;
+}
+
+/* Loading */
+
+/* Welcome */
+
+.welcomeCard{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100%;
+position: absolute;
+animation: welcomeCard 1s both 1s;
+z-index: 100;
+}
+.welcomeTitle{
+  animation: welcomeAn 2s both;
+padding: 1em;
+background-color: #2a2649;
+color: white;
+border-radius: 1em;
+pointer-events: none;
+}
+@keyframes welcomeCard {
+  0%{background: rgba(0, 0, 0, 0.493); opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes welcomeAn {
+  0%{transform: translateX(10em); opacity: 0;}
+  30%{transform: translateX(0); opacity: 1;}
+  100%{transform: translateX(-10em);opacity: 0;}
+}
+
+/* Welcome */
+
+
 /* Sign Up */
 
 .signUpContainer{
@@ -71,7 +120,7 @@ height: 98vh;
 
 .signCard{
 width: 300px;
-height: 250px;
+height: 300px;
 background-color: #2a2649;
 border-radius: 1em;
 display: flex;
@@ -80,6 +129,7 @@ justify-content: space-between;
 align-items: center;
 padding: 1em;
 animation: loginSpinIn 1s both;
+box-shadow: 0 10px 2px 2px solid black;
 }
 .signCardTitle{
 color:#6c60b4;
@@ -102,21 +152,32 @@ text-align: center;
   border: none;
   border-radius: 1em;
   outline: none;
-}
+  padding: 0 1em 0 1em;
+  transition: 0.5s;
 
+}
+.signInputs input:focus{
+  background-color: #9282f0;
+  transition: 0.3s;
+}
 .signBtnContainer{
   display: flex;
   flex-direction: column;
   gap: 0.8em;
   width: 100%;
 }
-.signBtnContainer button{
+.signBtn{
   width: 100%;
   height: 30px;
   cursor: pointer;
   background-color: #6c60b4;
   border-radius: 1em;
   border: none;
+  transition:0.5s;
+}
+.signBtn:hover{
+  background-color: #9282f0;
+  transition:0.5s;
 }
 .changeScreenSign{
 cursor: pointer;
@@ -148,6 +209,20 @@ width: auto;
   justify-content: center;
   box-shadow: 0px 0px 28px 2px #2a2649;
   align-items: center;
+  gap: 1em;
+}
+.logOutBtn{
+  height: 50px;
+  width: 200px;
+  background: #423a6f;
+  color: white;
+  border: none;
+  padding: 0;
+margin: 0;
+box-shadow: none;
+border-radius: 0.5em;
+cursor: pointer;
+font-size: 16px;
 }
 .toDoContainer{
 width: 100%;

@@ -10,8 +10,9 @@ const MiContexto = createContext();
 export const MiContextoProvider = ({ children }) => {
   // Estado que compartiremos con los componentes
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [modalContent, setModalContent] = useState("edit");
-
+const [user, setUser] = useState({})
 useEffect(() => {
     const body = document.querySelector("body")
 if (modal === true) {
@@ -23,7 +24,7 @@ else{
 
 }, [modal])
   return (
-    <MiContexto.Provider value={{ modal, setModal, modalContent, setModalContent }}>
+    <MiContexto.Provider value={{ modal, setModal, modalContent, setModalContent, user, setUser, loading, setLoading }}>
       {children}
     </MiContexto.Provider>
   );
