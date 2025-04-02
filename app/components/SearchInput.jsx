@@ -1,4 +1,5 @@
 import { getAuth, signOut } from "firebase/auth";
+import Avatar from "./Avatar";
 
 export default function ({ searchText, setSearchText }) {
     const handleChange = (event) => {
@@ -7,6 +8,7 @@ export default function ({ searchText, setSearchText }) {
   const auth = getAuth()
     return (
       <div className="searchContainer">
+        <Avatar/>
         <input
           type="text"
           className="toDoInput"

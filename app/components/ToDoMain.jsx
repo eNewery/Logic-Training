@@ -72,7 +72,7 @@ export default function ToDoPage() {
 
   return (
     <div className="toDoContainer">
-      <div className="welcomeCard"><p className="welcomeTitle">Bienvenid@ de nuevo {context.user.displayName}</p></div>
+      <div className="welcomeCard"><p className="welcomeTitle">Bienvenid@ {context.user.displayName}</p></div>
       <SearchInput searchText={searchText} setSearchText={setSearchText} /> {/* Pasa el estado y la función */}
       <div className="toDoCardsContainer">
         {filteredToDos.map((item) => (

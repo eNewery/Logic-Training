@@ -49,14 +49,9 @@ const context = useContext(MiContexto)
        email: userCredential.user.email,
        username: userCredential.user.displayName
       });
-
-      console.log('Usuario registrado:', userCredential.user);
-      alert("usuario creado");
       setOption(false); // Cambiar a la pantalla de login
       context.setLoading(false)
     } catch (error) {
-      console.error(error.message);
-      alert("error");
       context.setLoading(false)
     }
   };

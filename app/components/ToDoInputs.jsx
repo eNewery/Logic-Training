@@ -19,7 +19,7 @@ const handleChange = (event) => {
     return(
         <div className="toDoInputsContainer">
             <img src="./book.png" alt="" />
-            <input onChange={(e) => onChangeInput(e.target.value)} placeholder="Type Here . . ." className="toDoInput" type="text" name="" id="" />
+            <input onChange={(e) => onChangeInput(e.target.value)} placeholder="Escribir aqui..." className="toDoInput" type="text" name="" id="" />
             <div className="select-container">
       <select value={selectedNumber} onChange={handleChange} className="styled-select">
         <option value="">Seleccionar prioridad</option>
